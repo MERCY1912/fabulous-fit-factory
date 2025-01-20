@@ -11,9 +11,9 @@ export const Character: React.FC<CharacterProps> = ({ wearingItems, className })
     <div className={cn("character-container", className)}>
       {/* Base character */}
       <img
-        src="https://images.unsplash.com/photo-1649972904349-6e44c42644a7"
-        alt="Character"
-        className="absolute inset-0 w-full h-full object-cover rounded-lg"
+        src="/lovable-uploads/4b8a9ebb-e9e2-47a2-b681-116d77f02606.png"
+        alt="Base character model"
+        className="absolute inset-0 w-full h-full object-contain rounded-lg"
       />
       
       {/* Render wearing items */}
@@ -22,7 +22,7 @@ export const Character: React.FC<CharacterProps> = ({ wearingItems, className })
           key={index}
           src={item}
           alt="Clothing item"
-          className="absolute inset-0 w-full h-full object-cover rounded-lg animate-fade-in"
+          className="absolute inset-0 w-full h-full object-contain rounded-lg animate-fade-in"
         />
       ))}
     </div>
