@@ -1,6 +1,25 @@
 import React from 'react';
 import { cn } from "@/lib/utils";
 
+const CLOTHING_ITEMS = [
+  {
+    id: 'stockings1',
+    wearingImage: '/lovable-uploads/5d5ce8e7-bb32-426f-be23-cc38d48fc107.png',
+  },
+  {
+    id: 'tights1',
+    wearingImage: '/placeholder.svg',
+  },
+  {
+    id: 'skirt1',
+    wearingImage: '/placeholder.svg',
+  },
+  {
+    id: 'top1',
+    wearingImage: '/placeholder.svg',
+  }
+];
+
 interface CharacterProps {
   wearingItems: string[];
   className?: string;
@@ -17,14 +36,19 @@ export const Character: React.FC<CharacterProps> = ({ wearingItems, className })
       />
       
       {/* Render wearing items */}
-      {wearingItems.map((item, index) => (
-        <img
-          key={index}
-          src={item}
-          alt="Clothing item"
-          className="absolute inset-0 w-full h-full object-contain rounded-lg animate-fade-in"
-        />
-      ))}
+      {wearingItems.map((itemId) => {
+        const item = CLOTHING_ITEMS.find(item => item.id === itemId);
+        if (!item) return null;
+        
+        return (
+          <img
+            key={itemId}
+            src={item.wearingImage}
+            alt="Clothing item"
+            className="absolute inset-0 w-full h-full object-contain rounded-lg animate-fade-in"
+          />
+        );
+      })}
     </div>
   );
 };
