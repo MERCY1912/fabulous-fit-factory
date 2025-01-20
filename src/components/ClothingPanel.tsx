@@ -6,7 +6,7 @@ const CLOTHING_ITEMS = [
   {
     id: 'stockings1',
     name: 'Black Stockings',
-    image: '/placeholder.svg',
+    image: '/lovable-uploads/5d5ce8e7-bb32-426f-be23-cc38d48fc107.png',
     category: 'stockings'
   },
   {
